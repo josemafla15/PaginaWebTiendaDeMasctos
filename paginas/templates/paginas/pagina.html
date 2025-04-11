@@ -1,0 +1,9 @@
+{%  extends "layouts/layout.html" %}
+
+{%block title%} {{pagina.name}} {% endblock title %}
+
+{%block content%} 
+
+<h2> {{pagina.content | safe}}  </h2>
+
+{% endblock%}

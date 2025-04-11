@@ -1,0 +1,31 @@
+{% extends "layouts/layout.html" %}
+
+{% block content %}
+    <h1>Productos de perritos</h1>
+    <hr/>
+    {% for producto in productos %}
+        {% if producto.6 == 2 %}
+            <div style="border: 1px solid #ccc; padding: 10px; width: 250px; text-align: center; margin-bottom: 20px;">
+                <h2>{{ producto.1 }}</h2>
+                <p>{{ producto.2 }}</p>
+                <p><strong>Precio: ${{ producto.3 }}</strong></p>
+                <img src="/media/{{ producto.5 }}" alt="Imagen de {{ producto.1 }}" width="200" height="200" />
+
+                <!-- Botón Agregar al carrito -->
+            <form method="post" action="{% url 'agregarAlCarrito' producto.0 %}">
+                {% csrf_token %}
+                <button type="submit" style="
+                    margin-top: 10px;
+                    padding: 5px 10px;
+                    background-color: #28a745;
+                    color: white;
+                    border: none;
+                    border-radius: 5px;
+                ">Agregar al carrito</button>
+            </form>
+
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endblock %}
+

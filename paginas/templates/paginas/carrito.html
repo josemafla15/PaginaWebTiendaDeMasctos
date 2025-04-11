@@ -1,0 +1,28 @@
+{% extends "layouts/layout.html" %}
+
+{% block content %}
+  <h1>🛒 Carrito de Compras</h1>
+  <hr>
+
+  {% if productos_carrito %}
+    {% for producto in productos_carrito %}
+      <div style="border: 1px solid #ccc; padding: 10px; width: 250px; text-align: center; margin-bottom: 20px;">
+        <h2>{{ producto.nombre }}</h2>
+        <p><strong>Precio: ${{ producto.precio }}</strong></p>
+        <p><strong>Cantidad: {{ producto.cantidad }}</strong></p>
+        <img src="/media/{{ producto.imagen }}" alt="Imagen de {{ producto.nombre }}" width="200" height="200" />
+      </div> 
+
+    <!-- Botón Eliminar -->
+    <form method="post" action="{% url 'eliminar_del_carrito' producto.id %}">
+      {% csrf_token %}
+      <button type="submit" style="margin-top: 10px; padding: 5px 10px; background-color: #dc3545; color: white; border: none; border-radius: 5px;">
+          Eliminar del carrito
+      </button>
+    </form>
+     
+    {% endfor %}
+  {% else %}
+    <p>Tu carrito está vacío.</p>
+  {% endif %}
+{% endblock %}

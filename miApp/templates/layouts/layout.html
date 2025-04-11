@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+    
+<head>
+    <meta charset="utf-8" />
+    <title>Sitio web con Django || Jose Manuel Mafla</title>
+    <a href="{% url 'inicio' %}">
+        <img src="/media/Logo/logoLayout.jpg" alt="Imagen dinámica" width="300" height="100">
+    </a>
+</head>
+
+<body>
+    {% block content %}
+    {% endblock %}
+
+    <a href="{% url 'ver_carrito' %}" style="position: fixed; top: 20px; right: 20px; background-color: #007bff; color: white; padding: 10px 15px; border-radius: 10px; text-decoration: none;">🛒 Ver carrito</a>
+
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/573001234567" target="_blank" style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25D366;
+        padding: 10px;
+        border-radius: 50%;
+        text-decoration: none;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        z-index: 1000;
+    ">
+        <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp" style="width: 40px; height: 40px;">
+    </a>
+</body>
+
+<footer>
+    <br>
+    <p>&copy; 2025 Tienda de Mascotas. Todos los derechos reservados.</p>
+</footer>
+
+</html>
