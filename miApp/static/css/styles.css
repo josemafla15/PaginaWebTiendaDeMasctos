@@ -1,0 +1,40 @@
+/* Aplicar padding global */
+body {
+    padding-left: 40px;
+    padding-right: 40px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+}
+
+.logo-img {
+    width: 180px;
+    height: auto;
+}
+
+/* Estilos del footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px 0;
+    background-color: #eee;
+    color: #555;
+    font-size: 14px;
+}
+
+/* Botón de carrito */
+a[href*="ver_carrito"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Imagen del logo (opcional) */
+img {
+    max-width: 100%;
+    height: auto;
+}
